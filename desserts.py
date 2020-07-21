@@ -7,6 +7,16 @@ class Cupcake:
     cache = {}
 
 
+    @classmethod
+    def get(cls, name):
+      """Return a cupcake from cache"""
+
+      if name in Cupcake.cache:
+        return Cupcake.cache[name]
+      else:
+        print("Sorry, that cupcake doesn't exist")
+
+
     def __init__(self, name, flavor, price):
       """Create a Cupcake object"""
       self.name = name
@@ -52,6 +62,7 @@ class Cupcake:
         scaled_recipe.append(scaled_ingredient)
 
       return scaled_recipe
+
 
 if __name__ == '__main__':
     import doctest
